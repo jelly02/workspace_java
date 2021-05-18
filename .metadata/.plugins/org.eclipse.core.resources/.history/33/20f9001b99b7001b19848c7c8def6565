@@ -1,0 +1,50 @@
+package com.work.view;
+
+public class IfTest {
+	
+	public static void main(String[] args) {
+		
+		int score=85;
+		
+		if (score>=90)
+		{
+			System.out.println(score +" A등급");
+		}
+		else if(score>=80)
+		{
+			System.out.println(score +" B등급");
+		}
+		else if(score>=70)
+		{
+			System.out.println(score +" C등급");
+		}
+		else if(score>=60)
+		{
+			System.out.println(score +" D등급");
+		}
+		else
+		{
+			System.out.println(score +" F등급");
+		}
+		
+		
+		
+		
+	}
+
+	
+	
+	public static void main1(String[] args) {
+		
+		int score = 95;
+		
+		if (score >= 70) {
+			System.out.println("합격");
+		}
+		else {
+			System.out.println("불합격");
+		}
+
+	}
+
+}

@@ -1,0 +1,34 @@
+package com.work.view;
+
+public class IfTest {
+	
+	public static void main(String[] args) {
+		
+		int score=0;
+		
+		if (score>=90)
+		{
+			System.out.println();
+		}
+		
+		
+		
+		
+	}
+
+	
+	
+	public static void main1(String[] args) {
+		
+		int score = 95;
+		
+		if (score >= 70) {
+			System.out.println("합격");
+		}
+		else {
+			System.out.println("불합격");
+		}
+
+	}
+
+}

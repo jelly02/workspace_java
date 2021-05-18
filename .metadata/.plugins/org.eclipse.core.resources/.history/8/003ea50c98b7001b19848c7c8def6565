@@ -1,0 +1,19 @@
+package com.work.view;
+
+public class IfTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int score = 95;
+		
+		if (score = >70) {
+			System.out.println("합격");
+		}
+		else {
+			System.out.println("불합격");
+		}
+
+	}
+
+}
