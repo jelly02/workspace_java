@@ -28,19 +28,60 @@ public class RandomTeamTest {
 	 */
 	public static void main(String[] args) {
 		if(args.length != 1) {
-			System.out.println("Usage: java RandomTeamTest 팀원숫자");
+			System.out.println("Usage: java RandomTeamTest : 정확한 값(숫자)를 입력해주세요.");
 			System.exit(0);
 		}
 		
-		int teamLenth = Integer.parseInt(args[0]); // String 문자열타입의숫자데이터를 int 타입으로 변환
+		// String 문자열타입의숫자데이터를 int 타입으로 변환
+		int teamLength = Integer.parseInt(args[0]); 
 		
 		// 학생의 이름정보는 배열요소 30명 저장
-		
-		// 2차원 배열 행크기, 열크기 분석해서 선언 및 생성
-		
-		System.out.println();
+		String[] student = new String[] {"김기영","김나연","김대현","김수정","김의현","김재현","김종환","김주리","김주엽","김지원","김현수","김현진","김혜진","노한나","문수인","박민재","박영규","박유정","신지수","유건","유동국","유준성","이태규","이택근","이희원","장현우","조성현","최낙원","한다예","황윤아"};
+				
 		int randomNo = getRandomNo();
 		System.out.println(randomNo);
+		
+		// 2차원 배열 행크기, 열크기 분석해서 선언 및 생성
+		String[][] team = new String [randomNo][];
+
+		for(int i=0; i<randomNo; i++)
+		{
+			System.out.print(student[i]);
+			
+			for(int j=0; j<randomNo;j++)
+			{
+				System.out.println(team[i][j]);
+			}
+		}
+		
+		
+//		for(int i=0; i<randomNo; i++)
+//		{
+//			for(int j=0; j<team[i].length;j++)
+//			{
+//				team[i][j] = student[i];
+//				j++;
+//			}
+//		}
+//		
+//		for(int i=0; i<team.length;i++)
+//		{
+//			System.out.println((i+1)+"조"+team[i]);
+//		}
+//
+//		
+		
+		
+	
+//		for (int i = 0; i <= student.length; i++) { 
+//			
+//			System.out.print((i + 1) + "팀 " + "\t");
+//			
+//			for(int j = 0; j < team.length; j++) {
+//				System.out.print(team[j][i] + "\t");
+//			}
+//			System.out.println();
+//		}
 		
 	}
 
