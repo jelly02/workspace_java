@@ -6,4 +6,5 @@
     <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="com.work.model.dto.StudentScore"/>
     <fullyQualifiedTypeName name="com.work.model.service.StudentScoreService"/>
+    <fullyQualifiedTypeName name="com.work.model.dto.Member"/>
 </qualifiedTypeNameHistroy>

@@ -12,6 +12,10 @@ public class Member {
 	 String signInDate; 
 	 String phone;
 	 String email;
+	 
+		public Member() {
+			//기본 생성자
+		}
 	
 	public Member(String userId, String password, int point, int level, String signInDate, String phone, String email) {
 
@@ -23,6 +27,7 @@ public class Member {
 		this.phone = phone;
 		this.email = email;
 	}
+
 
 	public String getUserId() {
 		return userId;
