@@ -7,4 +7,5 @@
     <fullyQualifiedTypeName name="com.work.model.dto.StudentScore"/>
     <fullyQualifiedTypeName name="com.work.model.service.StudentScoreService"/>
     <fullyQualifiedTypeName name="com.work.model.dto.Member"/>
+    <fullyQualifiedTypeName name="com.work.model.dto.GeneralMember"/>
 </qualifiedTypeNameHistroy>
