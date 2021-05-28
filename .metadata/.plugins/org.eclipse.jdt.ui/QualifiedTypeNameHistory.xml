@@ -2,17 +2,21 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="com.sun.corba.se.impl.oa.toa.TOA"/>
     <fullyQualifiedTypeName name="java.util.Random"/>
-    <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="com.work.model.dto.StudentScore"/>
     <fullyQualifiedTypeName name="com.work.model.service.StudentScoreService"/>
     <fullyQualifiedTypeName name="com.work.view.TEST"/>
     <fullyQualifiedTypeName name="com.work.model.dto.SpecialMember"/>
-    <fullyQualifiedTypeName name="com.work.model.dto.Member"/>
     <fullyQualifiedTypeName name="com.work.model.dto.GeneralMember"/>
     <fullyQualifiedTypeName name="com.work.model.dto.AdminMember"/>
     <fullyQualifiedTypeName name="java.lang.Object"/>
     <fullyQualifiedTypeName name="com.work.static_test.SimpleMember"/>
     <fullyQualifiedTypeName name="com.work.static_test.StaticTest"/>
+    <fullyQualifiedTypeName name="com.work.model.service.MemberServiceAbstract"/>
+    <fullyQualifiedTypeName name="com.work.model.dto.Member"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="com.work.model.service.MemberService"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="com.oracle.xmlns.internal.webservices.jaxws_databinding.ExistingAnnotationsType"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>
