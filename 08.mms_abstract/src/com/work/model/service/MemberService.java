@@ -130,12 +130,62 @@ public class MemberService extends MemberServiceAbstract {
 		return null;
 	}
 	
+	//회원 전체 조회
+	 public Member[] getMember() {
+		 
+		 for(int i=0; i<count;i++){
+			 System.out.println((i+1)+"번째 : "+members[i]);
+		 }
+		 return members;
+	 }
+
+	 //회원 비밀번호 변경 
+	@Override
+	public void setMemberPw(String memberId, String memberPw, String modifyPw) {
+		
+		int index = exist(memberId);
+		
+		if(index >= 0) {
+			//해당 아이디가 있는 객체의 인덱스 
+			if(members[index].getMemberPw() == memberPw) {
+				//존재하는 아이디에 전달된 비밀번호가 저장되어 있던 비밀번호와 같을 때 
+				members[index].setMemberPw(memberPw);
+				System.out.println("비밀번호가 정상적으로 변경되었습니다.");
+			}else {
+				System.out.println("[오류] : 입력하신 비밀번호와 맞지 않습니다.");
+			}
+		}else {
+			System.out.println("[오류] : 아이디를 다시 입력해주세요");
+		}
+	}
+
+	//회원 탈퇴 
+	@Override
+	public void removeMember(String memberId, String memberPw) {
+		
+		int index = exist(memberId);
+		
+		if(index >= 0) {
+			//해당 아이디가 있는 객체의 인덱스 
+			if(members[index].getMemberPw() == memberPw) {
+				//존재하는 아이디에 전달된 비밀번호가 저장되어 있던 비밀번호와 같을 때 
+				
+				for(int i=index; i<count; i++) {
+					members[i] = members[i+1];
+				}
+				count--;
+				
+				System.out.println(memberId+"의 회원 탈퇴가 완료되었습니다.");
+				
+			}else {
+				System.out.println("[오류] : 입력하신 비밀번호와 맞지 않습니다.");
+			}
+		}else {
+			System.out.println("[오류] : 해당 아이디는 존재하지 않습니다. 다시 입력해주세요");
+		}
+	}
 	
-	
-	
-	
-	
-	
+
 	
 	
 }

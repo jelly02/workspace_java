@@ -53,6 +53,8 @@ public abstract class MemberServiceAbstract {
 	  *  - 매개변수 없음
 	  *  - 반환 타입 : 현재 등록된 모든 회원들의 정보만을 저장한 배열, 다형성  Member[]
 	  */
+	 public abstract Member[] getMember();
+	 
 	 
 	 /**
 	  *  회원 정보 전체 변경
@@ -64,16 +66,21 @@ public abstract class MemberServiceAbstract {
 	 /**
 	  *	 회원 비밀번호 변경 
 	  *	  - 메서드 명 : setMemberPw()
-	  *  - 매개변수 : 아이디 비밀번호, 변경 비밀번호
+	  *  - 매개변수 : 아이디, 비밀번호, 변경 비밀번호
 	  *  - 반환 타입 : boolean 암호변경성공 true, 실패하면 false	
 	  *   */
+	 public abstract void setMemberPw(String memberId, String memberPw, String modifyPw );
 	 
+	 
+	
 	 /**
 	  *  회원 탈퇴
 	  *  - 메서드명 : removeMember()
 	  *  - 매개변수 : 아이디, 비밀번호
 	  *  - 반환타입 : void
 	  */
+	 
+	 public abstract void removeMember(String memberId, String memberPw);
 	 
 	 /**
 	  *  회원 전체 탈퇴

@@ -13,7 +13,7 @@ public class TEST {
 			
 		Member dto1 = new GeneralMember ("user01", "password01", "홍길동", "01012341000", "user01@work.com", "2020-12-15","G",50000);
 		Member dto2 = new GeneralMember ("user02", "password02", "강감찬", "01012342000", "user02@work.com", "2021-01-15","G",950000);		
-		Member dto3 = new SpecialMember("user03", "password04", "김유신", "01012343000", "user03@work.com", "2020-11-15", "S", "강동원");
+		Member dto3 = new SpecialMember("user03", "password03", "김유신", "01012343000", "user03@work.com", "2020-11-15", "S", "강동원");
 		Member dto4 = new SpecialMember("user04", "password04", "김유신", "01012344000", "user04@work.com", "2021-01-05", "S", "김하린");
 		AdminMember dto5 = new AdminMember("administrator", "admin1004", "유관순", "01012345000", "administrator@work.com", "2020-04-01", "A", "선임");
 
@@ -28,6 +28,9 @@ public class TEST {
 		//2) 서비스에 멤버 객체 전달
 		service.addMember(dto1);
 		service.addMember(dto2);
+		service.addMember(dto3);
+		service.addMember(dto4);
+		service.addMember(dto5);
 
 		print("등록 인원 수 : "+service.getCount());
 		
@@ -36,7 +39,7 @@ public class TEST {
 		
 		if(dto != null) {
 			//실제 자식 객체에서 재정의 한 toStriong() 수행결과 출력 
-			System.out.println(dto);
+//			System.out.println(dto);
 		}
 		
 		print("user99 상세조회");
@@ -44,9 +47,21 @@ public class TEST {
 		
 		if(dto != null) {
 			//실제 자식 객체에서 재정의 한 toStriong() 수행결과 출력 
-			System.out.println(dto);
+//			System.out.println(dto);
 		}
+	
 		
+		print("전체 회원 조회");
+		service.getMember();
+		
+		print("비밀번호 변경");
+//		service.setMemberPw("user01", "password01", "password555");
+		
+		print("회원 탈퇴");
+		service.removeMember("user03", "password03");
+		
+		print("전체 회원 조회");
+		service.getMember();
 		
 	}
 	

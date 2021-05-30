@@ -77,7 +77,7 @@ public class AdminMember extends Member {
 
 	@Override
 	public String toString() {
-		return super.toString()+","+position;
+		return super.toString()+", "+position;
 	}
 	 
 	
