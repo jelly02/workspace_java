@@ -2,7 +2,6 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="com.sun.corba.se.impl.oa.toa.TOA"/>
     <fullyQualifiedTypeName name="java.util.Random"/>
-    <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="com.work.model.dto.StudentScore"/>
     <fullyQualifiedTypeName name="com.work.model.service.StudentScoreService"/>
     <fullyQualifiedTypeName name="com.work.view.TEST"/>
@@ -17,6 +16,14 @@
     <fullyQualifiedTypeName name="com.work.model.service.MemberService"/>
     <fullyQualifiedTypeName name="java.lang.Override"/>
     <fullyQualifiedTypeName name="com.oracle.xmlns.internal.webservices.jaxws_databinding.ExistingAnnotationsType"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="com.work.model.dto.Member"/>
+    <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="sun.util.locale.StringTokenIterator"/>
+    <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="com.work.util.Utility"/>
+    <fullyQualifiedTypeName name="java.util.Locale"/>
 </qualifiedTypeNameHistroy>
