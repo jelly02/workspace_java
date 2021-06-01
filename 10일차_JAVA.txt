@@ -1,0 +1,249 @@
+## ----------------------------------
+##	JAVA 9일차 수업
+## ----------------------------------
+
+## Class Node Type (클래스 종류)
+-- Concrete Class
+	>> 개발자가 자유롭게 필요시에 직접 객체 생성가능한 클래스
+	>> 다형성을 반영한 부모타입의 변수 사용 가능
+	>> 구성요소 : 멤버변수, 생성자, 메서드
+	>> 부모 선언형식 : public class 부모클래스명 {}
+	>> 현실세계어떤부모님?? : 재산만 상속해주시는 매우 감사한 부모님
+	
+	>> 자식클래스(상속) : 선택
+	
+	>> 자식클래스 선언형식 :
+		public class 자식클래스명 extends 부모클래스명 {}
+	
+-- Abstract Class
+	>> 미완성 클래스(추상클래스), 미완성 메서드(추상메서드)
+	>> 직접 객체 생성불가 클래스 
+	>> 다형성을 반영한 부모타입의 변수 사용 가능
+	>> 추상메서드 존재시에는 반드시 추상클래스
+	>> 추상메서드 없어도 상속을 강제하기위해서 추상클래스
+	>> 구성요소 : 멤버변수, 생성자, 메서드 + [추상메서드]
+	>> 부모 선언형식 : public abstract class 부모추상클래스명 {
+					 public abstract 반환타입 추상메서드명(args);
+				   }
+	>> 현실세계어떤부모님?? : 재산 + 채무도 함께 상속해주시는 감사한 부모님				   
+
+	>> 자식클래스(상속) : 필수
+
+	>> 자식클래스 선언형식 :
+		public class 자식클래스명 extends 부모추상클래스명 {}
+	
+-- Interface
+	>> 다중 구현 (표준화)
+	>> 다형성을 반영한 부모타입의 변수 사용 가능
+	>> 구성요소 : 추상메서드, 상수로만 구성된 클래스 형태
+	>> 부모 선언형식 : public interface 부모인터페이스명 {
+					 public 타입 상수명 = 상수값;
+					 public 반환타입 추상메서드명(args);
+				   }
+	>> 인터페이스에 선언되어 있는 메서드는 자동으로 public abstract 표기함(추상메서드)
+	>> 인퍼페이스에 선언되어 있는 멤버변수는 자동으로 public static final 표기함(상수)
+	>> 현실세계어떤부모님?? : 채무만 상속해주시는 그럼에도 불구하고 감사한 다중의 부모님
+	
+	>> 자식클래스(상속) : 필수
+	
+	>> 자식인터페이스(상속)
+		public interface 자식인터페이스명 extends 부모인터페이스명 {}
+		
+	>> 자식클래스(구현)
+		public class 자식클래스명 implements 부모인터페이스명1, 부모인터페이스명x {}
+		
+## 상속
+-- Generalization(일반화)
+	>> 공통 속성, 기능 일반화(표준화)
+-- 단일상속	
+-- 계층구조(tree 구조)
+
+## Generic 
+-- jdk1.5 추가
+-- API 문서 : java.lang.Object
+	<E> : 특정 Element Object 지정
+	<K> : Key 해당하는 Object 지정
+	<V> : Value 해당하는 Object 지정
+	<T> : Type 해당하는 Object 지정
+	
+## usage modifier
+-- static 멤버 : 클래스이름.static멤버변수명, 클래스이름.static멤버메서드명()
+-- abstract
+-- final	
+
+## class node type : concrete class, abstract class, interface
+## constructor : 접근가능, 중복정의
+
+## API Documentation 만들기	
+-- 회원관리 소스코드를 api문서 주석과 코드를 깔끔하게 정리진행해주세요
+-- jdk\bin> 
+	Usage: javadoc [options] [packagenames] [sourcefiles] [@files]	
+
+-- eclipse> 컴파일 완성 >> 테스트 완료 >> API 문서 작성(개발 종료시에 문서작업 진행)
+	>> 프로젝트선택 >> export >> Java >> javadoc
+	
+	>> 한글인코딩설정 : javadoc options => -encoding utf-8
+	
+-- api 문서주석 폴더 :
+	>> project\docs\api\public> 공개용 api 문서
+	>> project\docs\api\private> 내부용 api 문서
+	
+	
+## 주요 API 활용
+-- java.lang.Object	
+	>> equals(Object) : boolean / hashCode() : int
+	>> toString() : String
+
+-- 문자열
+	>> 문자열 비교시에는 equals() 메서드 사용해야함 
+	
+	>> java.lang.String : 
+		=> 불변 문자열
+		=> String name1 = "홍길동";
+		=> String name2 = new String("홍길동");
+	
+	>> java.lang.StringBuffer : jdk1.0
+	>> java.lang.StringBuilder : jdk1.5
+		=> 가변 문자열
+		StringBuilder name2 = new StringBuilder("홍길동");
+
+-- 문자열 토큰링
+	>> 구분자를 통해서 글짜를 분리(짤르기)
+	>> csv : 컴마 구분자를 문자 분리 활용
+	
+	>> java.lang.String#split():String[]
+	>> java.util.StringTokenizer(String, "+-*/% ,")
+	
+-- Wrapper
+	>> 기본형 <-> 객체형 변환
+	>> byte		-> Byte
+	>> short	-> Short
+	>> int		-> Integer
+	>> long		-> Long
+	>> float	-> Float
+	>> double	-> Double
+	>> boolean	-> Boolean
+	>> char		-> Character
+	
+	>> "1234" => 1234
+	>> Integer.parseInt("123");
+	
+	>> Integer intObj = new Integer("123");
+	>> Integer intObj = new Integer(123);
+	>> int data = intObj.intValue();
+
+-- 날짜, 형식
+	>> 가입일 : 가입당시 현재날짜(기본형식 : 년도4자리-월2자리-일2자리)
+	>> java.util.Date : 현재날짜, 현재시간
+	>> Calendar, GregorianCalendar
+	>> java.text.DateFormat >> java.text.SimpleDateFormat
+	>> java.util.Locale
+	
+	>> 날짜형식 => 문자열 변환 (com.work.util.Utility 유틸리티 클래스 분리설계)
+	>> 시간형식 => 문자열 변환
+	>> 년도 : yyyy
+	>> 월 : MM
+	>> 일 : dd
+	>> 시간 : hh / HH / KK
+	>> 분 : mm
+	>> 초 : ss
+	>> 오전/오후 : a
+	
+-- 숫자, 형식
+	>> 마일리지 : 123456789 => 123,456,789
+	>> 화폐 : 통화기호123,456,789
+
+
+## Array (배열)
+-- 자료 저장구조
+-- 다차원
+-- 기본형, 객체형 모두 가능, 상속전제 부모타입(다형성)
+-- 고정 크기(확장 불가) : static collection
+-- crud 기능 제공하지 않음
+-- 배열명.length : 배열 크기 저장변수
+
+## Collection API 활용
+-- 자료 저장구조
+-- 가변 크기 (자동 확장) : dynamic collection
+-- 객체형 (Wrapper API 기본형, 자동 형변환 : int => Integer)
+-- crud 포함한 다양한 메서드 제공
+
+-- java.util.Collection : interface
+
+-- java.util.List interface : 순서 존재, 중복 허용
+	=> ArrayList **, LinkedLit, Vector 등
+
+-- java.util.Set interface : 순서 없음, 중복 불가 
+	=> HashSet **, TreeSet, SortedSet 등
+	
+-- java.util.Map interface  : 
+	=> Key : Value
+	=> Key : unique(중복 불가)
+	=> HashMap **, Hashtable 등
+
+## List CRUD 메서드 : 순서 존재, 중복 허용
+-- equals() 메서드 재정의 여부에 따라 같은 객체여부 판단
+-- 반환타입 E(Object) : instanceof, type casting 
+-- C
+	=> boolean	add(E e)
+	=> void	add(int index, E element)
+-- R
+	=> E	get(int index)
+-- U
+	=> E	set(int index, E element)
+-- D
+	=> E	remove(int index)
+	=> boolean	remove(Object o)
+	
+-- 저장크기
+	=> int	size()
+
+## Set
+-- C
+-- R
+-- U
+-- D
+-- 저장크기
+
+## Map
+-- C
+-- R
+-- U
+-- D
+-- 저장크기
+
+
+## 중복정의 : 매개변수
+doA("a", "b", "c");
+doA("a", "b", "c", "d","e");
+doA("a", "b");
+
+## 회원가입, 등록 : 필수 속성 + 선택 속성
+
+## 전체 : 변경
+-- 기존 정보 (아이디 변경불가 : 읽기전용)
+-- 나머지 : 필요시 변경 입력
+-- 휴대폰, 이메일
+-- 아규먼트 : 회원객체(아이디) => 저장위치 => set(저장위치인덱스, 아규먼트전달받은객체)
+-- 회원 속성중에서 사용자가 임의로 변경해서는 안되는 속성?? : 아이디, 등급, 가입일, 마일리지, 담당자
+
+## 부분 변경
+-- 보안, 인증
+-- 비밀번호 변경 
+-- 아규먼트 : 아이디, 비밀번호, 변경할비밀번호 => 아이디 존재하는 저장위치 => 저장위치객체의 비밀번호 같은비교해 => 변경암호 변경처리
+
+## 회원관리 기능 : 딱 3개만 기능 추가
+-- 로그인
+-- 아이디중복조회
+-- 아이디찾기
+-- 등급별 전체회원조회
+
+## Generic
+
+## Set
+
+## Map
+
+## Iterator
+
+## ListIterator
