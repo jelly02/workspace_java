@@ -42,7 +42,7 @@
 		<item key="SynchronizedModifier" value="false"/>
 		<item key="Comments" value="true"/>
 		<item key="LimitElements" value="false"/>
-		<item key="IgnoreDefault" value="false"/>
+		<item key="IgnoreDefault" value="true"/>
 		<item key="StringStyle" value="2"/>
 		<item key="LimitValue" value="10"/>
 		<item key="SkipNull" value="false"/>
@@ -244,6 +244,25 @@
 				<item key="destdir" value="C:\00.practice\workspace_java\01.hello\doc"/>
 				<item key="antpath" value="C:\00.practice\workspace_java\01.hello\javadoc.xml"/>
 			</section>
+		</section>
+	</section>
+	<section name="org.eclipse.jdt.internal.ui.dialogs.OpenTypeSelectionDialog2">
+		<item key="ShowStatusLine" value="true"/>
+		<item key="History" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History/&gt;"/>
+	</section>
+	<section name="DialogBounds_SuperInterfaceSelectionDialog">
+		<item key="DIALOG_X_ORIGIN" value="85"/>
+		<item key="DIALOG_Y_ORIGIN" value="-47"/>
+		<item key="DIALOG_WIDTH" value="373"/>
+		<item key="DIALOG_HEIGHT" value="549"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+	</section>
+	<section name="nls_accessor_history">
+		<section name="0">
+			<item key="accessorName" value="Messages"/>
+			<item key="accessorPackage" value="=11-2.exception/src&lt;com.work.view"/>
+			<item key="bundleName" value="messages.properties"/>
+			<item key="bundlePackage" value="=11-2.exception/src&lt;com.work.view"/>
 		</section>
 	</section>
 </section>

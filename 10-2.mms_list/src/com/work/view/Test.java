@@ -77,7 +77,7 @@ public class Test {
 		if(result) {
 			System.out.println("비밀번호가 정상 변경 처리 되었습니다");
 		}else {
-			System.out.println("[오류] : 회원 정보를 다시 확인 필요");
+			System.out.println("[오류] : 회원 정보 확인 필요");
 		}
 		
 		dto = service.getMember("user02");
@@ -92,6 +92,8 @@ public class Test {
 		}else {
 			System.out.println("탈퇴실패ㅠㅠ");
 		}
+		
+		print("등급변경");
 		
 //		service.setMemberPw("test01", "test1234", "test9999");
 		

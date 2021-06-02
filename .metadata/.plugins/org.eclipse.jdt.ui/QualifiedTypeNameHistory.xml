@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="com.sun.corba.se.impl.oa.toa.TOA"/>
-    <fullyQualifiedTypeName name="java.util.Random"/>
     <fullyQualifiedTypeName name="com.work.model.dto.StudentScore"/>
     <fullyQualifiedTypeName name="com.work.model.service.StudentScoreService"/>
     <fullyQualifiedTypeName name="com.work.view.TEST"/>
     <fullyQualifiedTypeName name="com.work.model.dto.SpecialMember"/>
-    <fullyQualifiedTypeName name="com.work.model.dto.AdminMember"/>
     <fullyQualifiedTypeName name="com.work.static_test.SimpleMember"/>
     <fullyQualifiedTypeName name="com.work.static_test.StaticTest"/>
     <fullyQualifiedTypeName name="com.work.model.service.MemberServiceAbstract"/>
@@ -17,18 +15,27 @@
     <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="sun.util.locale.StringTokenIterator"/>
     <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
-    <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="java.text.NumberFormat"/>
     <fullyQualifiedTypeName name="java.util.Currency"/>
     <fullyQualifiedTypeName name="java.util.Locale"/>
-    <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
-    <fullyQualifiedTypeName name="java.lang.Object"/>
-    <fullyQualifiedTypeName name="com.work.model.service.MemberService"/>
     <fullyQualifiedTypeName name="sun.misc.Service"/>
-    <fullyQualifiedTypeName name="com.work.model.dto.Member"/>
     <fullyQualifiedTypeName name="com.work.model.dto.GeneralMember"/>
     <fullyQualifiedTypeName name="com.work.util.Utility"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="com.work.model.service.MemberService"/>
+    <fullyQualifiedTypeName name="com.work.model.dto.AdminMember"/>
+    <fullyQualifiedTypeName name="com.sun.xml.internal.bind.v2.schemagen.xmlschema.List"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="java.lang.Object"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="com.work.model.dto.Member"/>
+    <fullyQualifiedTypeName name="java.util.Set"/>
+    <fullyQualifiedTypeName name="java.util.Iterator"/>
+    <fullyQualifiedTypeName name="java.util.HashSet"/>
+    <fullyQualifiedTypeName name="java.util.Random"/>
+    <fullyQualifiedTypeName name="java.lang.NullPointerException"/>
+    <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
 </qualifiedTypeNameHistroy>

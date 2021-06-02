@@ -94,7 +94,7 @@ public class MemberService {
 			
 			if(index >= 0) {
 				
-				 obj = list.get(index);
+				 Object obj = list.get(index);
 				
 				if(obj instanceof Member) {
 					Member dto = (Member)obj;
@@ -257,8 +257,35 @@ public class MemberService {
 	}
 	
 	
-	
-	
+	/**
+	 * 
+	 */
+	public boolean setGrade(String adminId, String memberId, String grade) {
+		
+		int index = exist(adminId);
+		
+		if(index >= 0) {
+			
+			Object obj = list.get(index);
+			
+			if(obj instanceof Member) {
+				
+				Member dto = (Member) obj;
+				
+				if(dto.getGrade().equals("A")) {
+					
+				//	dto.getMemberId(memberId).setGrade(grade);
+					
+					return true;
+				}
+			}
+			
+		}
+		
+		
+		
+		return false;
+	}
 	
 	
 	
