@@ -6,7 +6,7 @@ public class DuplicateException  extends Exception {
 		// TODO Auto-generated constructor stub
 	}
 
-	public DuplicateException(String message) {
+	public DuplicateException (String message) {
 		super("중복 예외 : "+message);
 	}
 }

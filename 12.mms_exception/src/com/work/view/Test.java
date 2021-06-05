@@ -182,6 +182,8 @@ public class Test {
 	 */
 	public static void print(String message) {
 		System.out.println("\n### " + message);
+		
+		
 	}
 	
 }
