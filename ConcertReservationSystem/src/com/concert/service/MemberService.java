@@ -25,6 +25,23 @@ public class MemberService {
 		return list;
 	}
 	
+
+	/**
+	 * 회원 존재 유무 조회 메서드
+	 * @param memberId 아이디
+	 * @return 존재 시 저장 위치 인덱스 번호, 미존재시 -1
+	 */
+	private int exist(String memberId) {
+
+		for (int index = 0; index < list.size(); index++) {
+			if(list.get(index).getMemberId().equals(memberId)) {
+				return index;
+			}
+		}
+		return -1;
+	}
+	
+	
 	/**
 	 *  회원 등록 메서드
 	 * @param member
@@ -43,20 +60,5 @@ public class MemberService {
 		
 	}
 
-	/**
-	 * 회원 존재 유무 조회 메서드
-	 * @param memberId 아이디
-	 * @return 존재 시 저장 위치 인덱스 번호, 미존재시 -1
-	 */
-
-	private int exist(String memberId) {
-
-		for (int index = 0; index < list.size(); index++) {
-			if(list.get(index).getMemberId().equals(memberId)) {
-				return index;
-			}
-		}
-		return -1;
-	}
 
 }

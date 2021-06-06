@@ -21,9 +21,16 @@ public class Test {
 
 	public static void main(String[] args) {
 		
-		mainMenu();
+		boolean outLoop1 = true;
+		boolean outLoop2 = true;
+		boolean outLoop3 = true;
+		boolean outLoop4 = true;
+		boolean outLoop5 = true;
+	
 		
-		while(true) {
+		while(outLoop1) {
+			
+			mainMenu();
 			
 			int menuNum = inputNumber();
 			
@@ -36,41 +43,60 @@ public class Test {
 				if(result) {
 					System.out.println("로그인 성공");
 					
-					memberMenu();
-					
-					int memNum = inputNumber();
-					
-					switch(memNum) {
-					
-					//공연 정보 조회 
-					case 1 : 
-						infoCheck(); break;
+					while(outLoop2) 
+					{
+						memberMenu();
 						
-					//공연 예약	
-					case 2 : 
-						infoReservation();
-						System.out.println("2번"); break;
+						int memNum = inputNumber();
 						
-					// 예약 조회	
-					case 3 : 
-						infoReservationList();
-						System.out.println("3번"); break;
+						switch(memNum) {
 						
-					// 캐시 충전	
-					case 4 : 
-						addMoney();
-						System.out.println("4번"); break;
-						
-					// 캐시 조회 	
-					case 5 : 
-						checkMoney();
-						System.out.println("5번"); break;
-					
+							//공연 정보 조회 
+							case 1 : 
+								
+									infoCheck(); 
+									
+									int backNum = inputNumber();
+									
+									if(backNum==0) {
+										break;
+									}else {
+										System.out.println("[오류] 뒤로가려면 '0' 을 입력해주세요.");
+									}
+								
+		
+							//공연 예약	
+							case 2 : 
+		
+									infoReservation();
+									
+									backNum = inputNumber();
+									
+									if(backNum==0) {
+											break;
+									}else {
+										System.out.println("[오류] 뒤로가려면 '0' 을 입력해주세요.");
+									}
+
+							// 예약 조회	
+							case 3 : 
+								infoReservationList();
+								System.out.println("예약 조회	"); 
+								
+							// 캐시 충전	
+							case 4 : 
+								addMoney();
+								System.out.println("캐시 충전");
+								
+							// 캐시 조회 	
+							case 5 : 
+								checkMoney();
+								System.out.println("캐시 조회 ");
+							
+							
+						}	
 					
 					}
-					
-					
-					break;
 				} else {
 					System.out.println("로그인 실패하였습니다. 메인 화면으로 돌아갑니다");
 					mainMenu();
@@ -169,12 +195,20 @@ public class Test {
 	 *  공연 정보 조회 화면 
 	 */
 	private static void infoCheck() {
-	
-		printSpace("1. 뮤지컬 더 리퍼, 6/12, 19:30 ~ 22:00, 문채원, 송중기");
-		printSpace("2. 옥탑방 고양이,  6/19, 20:00 ~ 22:00, 남정은, 이경민");
-		printSpace("3. 피카츄의 대모험, 6/26, 19:30 ~ 21:30, 소니아, 금랑");
-		printSpace("4. 낫아웃, 7/3. 20:00 ~ 22:30, 송이재, 정재광");
-		printSpace("5. 행복, 7/10, 19:30 ~ 21:30 김단율, 정영성");
+		
+		printLine();
+		printSpace("\t < 공연 조회 >");
+		System.out.println("* 현재 진행되고 있는 공연들 입니다! *");
+		System.out.println("* 뒤로가기 : '0' 입력*");
+		System.out.println();
+		
+		System.out.println("1. 뮤지컬 더 리퍼, 6/12, 19:30 ~ 22:00, 문채원, 송중기");
+		System.out.println("2. 옥탑방 고양이,  6/19, 20:00 ~ 22:00, 남정은, 이경민");
+		System.out.println("3. 피카츄의 대모험, 6/26, 19:30 ~ 21:30, 소니아, 금랑");
+		System.out.println("4. 낫아웃, 7/3. 20:00 ~ 22:30, 송이재, 정재광");
+		System.out.println("5. 행복, 7/10, 19:30 ~ 21:30 김단율, 정영성");
+		
+		System.out.println();
 		
 	}
 
@@ -183,7 +217,20 @@ public class Test {
 	 *  공연 예약 화면 
 	 */
 	private static void infoReservation() {
-		// TODO Auto-generated method stub
+		
+		printLine();
+		printSpace("\t < 1. 공연 예약  >");
+		System.out.println("* 관람하실 공연의 숫자를 입력해주세요.*");
+		System.out.println("* 뒤로가기 : '0' 입력*");
+		System.out.println();
+		
+		System.out.println("1. 뮤지컬 더 리퍼, 6/12, 19:30 ~ 22:00, 문채원, 송중기");
+		System.out.println("2. 옥탑방 고양이,  6/19, 20:00 ~ 22:00, 남정은, 이경민");
+		System.out.println("3. 피카츄의 대모험, 6/26, 19:30 ~ 21:30, 소니아, 금랑");
+		System.out.println("4. 낫아웃, 7/3. 20:00 ~ 22:30, 송이재, 정재광");
+		System.out.println("5. 행복, 7/10, 19:30 ~ 21:30 김단율, 정영성");
+		
+		System.out.println();
 		
 	}
 
@@ -213,17 +260,6 @@ public class Test {
 		// TODO Auto-generated method stub
 		
 	}
-	
-	/**
-	 * 	 공연 정보 조회 화면 
-	 */
-
-	private static void infoCheckList() {
-		// TODO Auto-generated method stub
-		
-		
-	}
-
 
 
 
