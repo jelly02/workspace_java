@@ -27,7 +27,7 @@ public class Info {
 	private String infoMaleActor;
 	
 	/** 공연 가격, 필수 */
-	private int ticketPrice;
+//	private int ticketPrice;
 	
 	/** 기본생정자 */
 	public Info() {}
@@ -45,14 +45,13 @@ public class Info {
 	 * @param ticketPrice 공연 가격
 	 */
 	public Info(String infoCode, String infoName, String infoDate, String infoTime, String infoFemaleActor,
-			String infoMaleActor, int ticketPrice) {
+			String infoMaleActor) {
 		this.infoCode = infoCode;
 		this.infoName = infoName;
 		this.infoDate = infoDate;
 		this.infoTime = infoTime;
 		this.infoFemaleActor = infoFemaleActor;
 		this.infoMaleActor = infoMaleActor;
-		this.ticketPrice = ticketPrice;
 	}
 
 
@@ -152,20 +151,6 @@ public class Info {
 	}
 
 
-	/**
-	 * @return the ticketPrice
-	 */
-	public int getTicketPrice() {
-		return ticketPrice;
-	}
-
-
-	/**
-	 * @param ticketPrice the ticketPrice to set
-	 */
-	public void setTicketPrice(int ticketPrice) {
-		this.ticketPrice = ticketPrice;
-	}
 
 
 	@Override
@@ -183,7 +168,6 @@ public class Info {
 		builder.append(", ");
 		builder.append(infoMaleActor);
 		builder.append(", ");
-		builder.append(ticketPrice);
 		return builder.toString();
 	}
 

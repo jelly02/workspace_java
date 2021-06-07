@@ -9,8 +9,12 @@ package com.concert.exception;
 public class CommonException extends Exception {
 	
 	public CommonException() {
-		// TODO Auto-generated constructor stub
+		super("사용자 예외");
 	}
+	
+	public CommonException(String message) {
+		super("[오류] " + message);
+	}	
 	
 	
 	

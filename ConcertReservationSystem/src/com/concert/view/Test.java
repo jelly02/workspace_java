@@ -7,6 +7,8 @@ import java.io.InputStreamReader;
 import com.concert.model.Member;
 import com.concert.service.MemberService;
 
+import sun.print.resources.serviceui;
+
 
 /**
  * 테스트 클래스 
@@ -17,9 +19,12 @@ import com.concert.service.MemberService;
 
 
 public class Test {
-		
+	
+	/** 회원관리 서비스 클래스 */
+	MemberService service = new MemberService();
+	
 
-	public static void main(String[] args) {
+/*	public static void main(String[] args) {
 		
 		boolean outLoop1 = true;
 		boolean outLoop2 = true;
@@ -41,7 +46,7 @@ public class Test {
 				boolean result = loginMenu();
 				
 				if(result) {
-					System.out.println("로그인 성공");
+					System.out.println("[안내] 로그인 완료");
 					
 					while(outLoop2) 
 					{
@@ -98,7 +103,7 @@ public class Test {
 					
 					}
 				} else {
-					System.out.println("로그인 실패하였습니다. 메인 화면으로 돌아갑니다");
+					System.out.println("[오류] 로그인 실패하였습니다. 메인 화면으로 돌아갑니다");
 					mainMenu();
 				}
 				break;
@@ -117,13 +122,15 @@ public class Test {
 			}
 		}
 	}
-
+*/
 	/**
 	 *  홈 메뉴  : 로그인 하지 않은 사용자도 볼 수 있는 메뉴
 	 */
 	private static void mainMenu() {
 		
-		printLine();
+	  MemberService service = new MemberService();
+	  
+	  	printLine();
 		System.out.println(" \t00 공연 관리 프로그램");
 		System.out.println();
 		
@@ -148,12 +155,19 @@ public class Test {
 	}
 	
 	
+	
 	/**
 	 * 로그인  화면
-	 * @return true(성공) false(실패) 
+	 * @return 
 	 */
 	
 	private static boolean loginMenu() {
+		
+		MemberService service = new MemberService();
+		
+		//list 출력 
+		System.out.println("loginMenu"+service.getMember());
+		
 		
 		printLine();
 		System.out.println(" \t\t로그인");
@@ -165,9 +179,9 @@ public class Test {
 		System.out.print("비밀번호 : ");
 		String memberPw = inputString();
 		
-		/*로그인 성공하면 true, 아니면 메인 메뉴를 보여줘야겠다 */
-		
-		return true;
+		boolean result = service.login(memberId, memberPw);
+
+		return result;
 		
 	}
 	
@@ -175,11 +189,11 @@ public class Test {
 	 *  멤버 메뉴 : 로그인 성공 후 회원만 볼 수 있는 메뉴
 	 * 
 	 */
-	private static void memberMenu() {
+	private static  void memberMenu() {
 		printLine();
 
 		printSpace("00 공연 관리 프로그램");
-		printSpace(" user01 님 환영합니다!");
+//		printSpace(" user01 님 환영합니다!");
 		System.out.println();
 		
 		printSpace("1. 공연 정보 조회 ");
@@ -194,19 +208,15 @@ public class Test {
 	/**
 	 *  공연 정보 조회 화면 
 	 */
-	private static void infoCheck() {
+	private static  void infoCheck() {
 		
 		printLine();
 		printSpace("\t < 공연 조회 >");
 		System.out.println("* 현재 진행되고 있는 공연들 입니다! *");
 		System.out.println("* 뒤로가기 : '0' 입력*");
 		System.out.println();
+
 		
-		System.out.println("1. 뮤지컬 더 리퍼, 6/12, 19:30 ~ 22:00, 문채원, 송중기");
-		System.out.println("2. 옥탑방 고양이,  6/19, 20:00 ~ 22:00, 남정은, 이경민");
-		System.out.println("3. 피카츄의 대모험, 6/26, 19:30 ~ 21:30, 소니아, 금랑");
-		System.out.println("4. 낫아웃, 7/3. 20:00 ~ 22:30, 송이재, 정재광");
-		System.out.println("5. 행복, 7/10, 19:30 ~ 21:30 김단율, 정영성");
 		
 		System.out.println();
 		
@@ -216,7 +226,7 @@ public class Test {
 	/**
 	 *  공연 예약 화면 
 	 */
-	private static void infoReservation() {
+	private static  void infoReservation() {
 		
 		printLine();
 		printSpace("\t < 1. 공연 예약  >");
@@ -238,7 +248,7 @@ public class Test {
 	 *  공연 예약 조회 화면
 	 */
 	private static void infoReservationList() {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
@@ -293,32 +303,26 @@ public class Test {
 		System.out.println(" \t\t회원가입");
 		System.out.println();
 		
-//		try {
-//				System.out.println("아이디 : ");
-//				String memberId = inputString();
-//				
-//				System.out.println("비밀번호 : ");
-//				String memberPw = inputString();
-//				
-//				System.out.println("이름: ");
-//				String name = inputString();
-//				
-//				System.out.println("휴대폰 : ");
-//				String mobile = inputString();
-//				
-//				Member member = new Member(memberId, memberPw, name, mobile,"G",0);
-//				
-//				service.addMember(member);
-//				
-//				service.getMember();
-//				
-//				/*
-//				 * 회원가입이 완료 되었습니다! 메인으로 이동합니다.
-//				 * */
-//				
-//		}catch(Exception e){
-//			e.getStackTrace();
-//		}
+		try {
+				System.out.println("아이디 : ");
+				String memberId = inputString();
+				
+				System.out.println("비밀번호 : ");
+				String memberPw = inputString();
+				
+				System.out.println("이름: ");
+				String name = inputString();
+				
+				System.out.println("휴대폰 : ");
+				String mobile = inputString();
+				
+				service.addMember(memberId, memberPw, name, mobile);
+			
+				
+		}catch(Exception e){
+			e.getMessage();
+		}
+		
 		
 	}
 	

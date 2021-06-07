@@ -30,7 +30,6 @@
     <fullyQualifiedTypeName name="java.lang.Object"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="java.util.Set"/>
-    <fullyQualifiedTypeName name="java.util.Iterator"/>
     <fullyQualifiedTypeName name="java.util.HashSet"/>
     <fullyQualifiedTypeName name="java.util.Random"/>
     <fullyQualifiedTypeName name="java.lang.NullPointerException"/>
@@ -46,7 +45,10 @@
     <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="com.concert.model.Member"/>
     <fullyQualifiedTypeName name="com.concert.service.MemberService"/>
     <fullyQualifiedTypeName name="sun.print.resources.serviceui"/>
-    <fullyQualifiedTypeName name="com.concert.model.Member"/>
+    <fullyQualifiedTypeName name="java.util.Iterator"/>
+    <fullyQualifiedTypeName name="com.concert.model.Info"/>
+    <fullyQualifiedTypeName name="com.concert.view.Menu"/>
 </qualifiedTypeNameHistroy>
