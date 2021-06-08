@@ -215,22 +215,19 @@ public class MemberService {
 
 	private void seatReservation(int index) {
 		
-		System.out.print("VIP석 : ");
-		for(int i=0; i<vipSeat.length; i++) {
-            System.out.print(vipSeat[i] + " ");
-        }
-		
-		System.out.print("S석 : ");
-		for(int i=0; i<sSeat.length; i++) {
-            System.out.print(sSeat[i] + " ");
-        }
-		
-		System.out.print("R석 : ");
-		for(int i=0; i<rSeat.length; i++) {
-            System.out.print(rSeat[i] + " ");
-        }
-		
-		
-		
+			System.out.print("VIP석 : ");
+			for(int i=0; i<vipSeat.length; i++) {
+	            System.out.print(vipSeat[i] + " ");
+	        }
+			
+			System.out.print("S석 : ");
+			for(int i=0; i<sSeat.length; i++) {
+	            System.out.print(sSeat[i] + " ");
+	        }
+			
+			System.out.print("R석 : ");
+			for(int i=0; i<rSeat.length; i++) {
+	            System.out.print(rSeat[i] + " ");  
+		}
 	}
 }

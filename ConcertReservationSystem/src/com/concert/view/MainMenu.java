@@ -6,11 +6,20 @@ import java.io.InputStreamReader;
 
 import com.concert.service.MemberService;
 
-public class Menu {
+public class MainMenu {
+
 
 	/** 회원관리 서비스 클래스 */
 	MemberService service = new MemberService();
 	
+	public void why() {
+		System.out.println("아니 왜 안되는데");
+	}
+	
+	
+	public MainMenu() {
+		System.out.println("생성자 수행");
+	}
 	
 	/** 메인 화면 */
 	public void mainMenu() {
@@ -56,7 +65,7 @@ public class Menu {
 	 *  로그인 
 	 */
 
-	private void loginMenu() {
+	public void loginMenu() {
 
 			
 		printLine();
@@ -87,7 +96,7 @@ public class Menu {
 	/**
 	 *  회원 가입
 	 */
-	private void addMemberMenu() {
+	public void addMemberMenu() {
 		
 		printLine();
 		System.out.println(" \t\t회원가입");
@@ -115,7 +124,7 @@ public class Menu {
 		
 	}
 
-	private void memberMenu() {
+	public void memberMenu() {
 		printLine();
 
 		printSpace("00 공연 관리 프로그램");
@@ -166,17 +175,17 @@ public class Menu {
 		
 	}
 	
-	private void checkMoney() {
+	public void checkMoney() {
 		// TODO Auto-generated method stub
 		
 	}
 
-	private void infoReservationList() {
+	public void infoReservationList() {
 		// TODO Auto-generated method stub
 		
 	}
 
-	private void infoReservation() {
+	public void infoReservation() {
 	
 		printLine();
 		printSpace("\t< 2. 공연 예약  >");
@@ -203,7 +212,7 @@ public class Menu {
 	/**
 	 *  공연 정보 조회 화면 
 	 */
-	private  void infoCheck() {
+	public  void infoCheck() {
 		
 		printLine();
 		printSpace("\t < 공연 조회 >");
@@ -271,4 +280,5 @@ public class Menu {
 		return Integer.parseInt(data);
 	}
 
+	
 }
