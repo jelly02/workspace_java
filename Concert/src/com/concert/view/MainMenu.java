@@ -24,7 +24,7 @@ public class MainMenu {
 	public void mainMenu() {
 		
 		printLine();
-		System.out.println(" \t00 공연 관리 프로그램");
+		System.out.println(" \t5조 공연 관리 프로그램");
 		System.out.println();
 		
 		printSpace("1. 로그인");
@@ -89,6 +89,7 @@ public class MainMenu {
 			
 		}else if(result == false){
 			System.out.println("[오류] 입력한 정보와 맞는 회원이 없습니다. 다시 시도해주세요.");
+			System.out.println();
 			mainMenu();
 		}	
 	}
@@ -127,12 +128,12 @@ public class MainMenu {
 	public void memberMenu(String memberId) {
 		printLine();
 
-		printSpace("00 공연 관리 프로그램");
+		printSpace("5조 공연 관리 프로그램");
 		System.out.println();
 		
 		printSpace("1. 공연 정보 조회 ");
 		printSpace("2. 공연 예약");
-		printSpace("3. 공연 예약 조회");
+//		printSpace("3. 공연 예약 조회");
 		printSpace("0. 로그아웃");
 		System.out.println();
 		printLine(); 
@@ -153,9 +154,9 @@ public class MainMenu {
 		
 		
 		//예약한 공연 조회
-		case 3:
-			infoReservationList(reservation);
-			break;
+//		case 3:
+//			infoReservationList(reservation);
+//			break;
 			
 		//캐시 충전	
 		case 4:
@@ -179,98 +180,131 @@ public class MainMenu {
 		
 	}
 
-	public void infoReservationList(ArrayList<Reservation> reservation) {
-	
-		printLine();
-		printSpace("\t<3. 예약 조회  >");
-		System.out.println();
-		System.out.println("* 뒤로가기 : '0' 입력*");
-		
-		int menuNo = inputNumber();
-		
-		for (int i = 0; i < reservation.size(); i++) {
-		    System.out.print(reservation.get(i) + " ");
-		}
-	
-		
-		if(menuNo == 0 ) {
-		
-		}else {
-			System.out.println("[오류] 뒤로가려면 '0'을 입력해주세요.");
-		}
-	}
+//	public void infoReservationList(ArrayList<Reservation> reservation) {
+//	
+//		printLine();
+//		printSpace("\t<3. 예약 조회  >");
+//		System.out.println();
+//		System.out.println("* 뒤로가기 : '0' 입력*");
+//		
+//		int menuNo = inputNumber();
+//		
+//		service.getReservationList();
+//		
+//		if(menuNo == 0 ) {
+//		
+//		}else {
+//			System.out.println("[오류] 뒤로가려면 '0'을 입력해주세요.");
+//		}
+//	}
 
 	public void infoReservation(String memberId) {
 	
 		printLine();
 		printSpace("\t< 2. 공연 예약  >");
-		System.out.println("* 관람하고 싶은 공연의 번호를 입력해주세요.*");
-		System.out.println("* 뒤로가기 : '0' 입력*");
+		
 		System.out.println();
 		
-		//공연 정보 가져오기 
-		service.getPlayPrint();
+		printSpace("1. 공연 예약 ");
+		printSpace("2. 예약 내역 조회");
+		printSpace("3. 뒤로 가기");
 		
 		int menuNo = inputNumber();
 		
-		//while 문 조절
-		boolean loop = true;
+		if(menuNo == 3) {
+			memberMenu(memberId);
+		}
 		
-		if(menuNo != 0) {
+		switch(menuNo) {
+		
+		
+		case 1 :
+			System.out.println("* 관람하고 싶은 공연의 번호를 입력해주세요.*");
+			System.out.println("* 뒤로가기 : '0' 입력*");
+			System.out.println();
 			
-			boolean seatCheck = true;
+			//공연 정보 가져오기 
+			service.getPlayPrint();
 			
-				while(loop) {
-				// 공연 좌석 선택
-				printLine();
-				printSpace("\t< 2. 공연 좌석 선택>");
-				System.out.println();
-							
-				//공연 좌석 출력 
-				service.reservation(menuNo);
-							
-				System.out.println();
-				System.out.println("* 원하는 좌석 타입을 선택 해주세요.*");
-				System.out.println();
-				System.out.println("1 : VIP석, 2: S석, 3 : R석");
-				System.out.println();
+		    menuNo = inputNumber();
+			
+			//while 문 조절
+			boolean loop = true;
+			
+			if(menuNo != 0) {
 				
-							
-				int type = inputNumber();
+				boolean seatCheck = true;
 				
-				//원하는 좌석 출력함
-				seatCheck = service.userSeatChoice(type);
-				
-				if(seatCheck == true) {
-					// 사용자로부터 원하는 좌석 번호 입력 받게 함
-					System.out.println("* 원하는 좌석 번호를 입력해주세요. *");
-					int seatChoice = inputNumber();
+					while(loop) {
+					// 공연 좌석 선택
+					printLine();
+					printSpace("\t< 2. 공연 좌석 선택>");
+					System.out.println();
+								
+					//공연 좌석 출력 
+					service.reservation(menuNo);
+								
+					System.out.println();
+					System.out.println("* 원하는 좌석 타입을 선택 해주세요.*");
+					System.out.println();
+					System.out.println("1 : VIP석, 2: S석, 3 : R석");
+					System.out.println();
 					
-					//좌석 예약
-					boolean result = service.userSeatChoice(menuNo, type, seatChoice, memberId);
+								
+					int type = inputNumber();
 					
-					if(result) {
-						System.out.println("[안내] 좌석 예약을 완료했습니다. 즐거운 관람 되시길 바랍니다!");
-						System.out.println();
+					//원하는 좌석 출력함
+					seatCheck = service.userSeatChoice(type);
+					
+					if(seatCheck == true) {
+							// 사용자로부터 원하는 좌석 번호 입력 받게 함
+							System.out.println("* 원하는 좌석 번호를 입력해주세요. *");
+							int seatChoice = inputNumber();
+							
+							//좌석 예약
+							boolean result = service.userSeatChoice(menuNo, type, seatChoice, memberId);
 						
-						loop = false;
-						memberMenu(memberId);
-						break;
+							if(result) {
+								System.out.println();
+								
+								loop = false;
+								memberMenu(memberId);
+								break;
+							}else {
+								System.out.println("[오류] 화면에 표시된 좌석 숫자를 입력해주세요.");
+								System.out.println();
+								continue;
+							}
+						
 					}else {
-						System.out.println("[오류] 화면에 표시된 좌석 숫자를 입력해주세요.");
-						System.out.println();
-						continue;
-					}
-					
-				}else {
-						//좌석 번호 틀렸을 때 
-						continue;
+							//좌석 번호 틀렸을 때 
+							continue;
+						}
 					}
 				}
-			}else if(menuNo == 0){
-					memberMenu(memberId);
+			
+		case 2 : 
+			printLine();
+			printSpace("\t< 예약 내역 조회 >");
+			System.out.println("* 뒤로가기 : '0' 입력*");
+			
+			System.out.println();
+			
+			service.getReservationList();
+			
+			menuNo = inputNumber();
+			
+			if(menuNo == 0) {
+				infoReservation(memberId);
+			}else {
+				System.out.println("[오류] 잘못된 숫자를 입력하셨습니다. 회원 화면으로 돌아갑니다.");
+				memberMenu(memberId);
 			}
-	
+			
+		case 0 : 
+			memberMenu(memberId);
+
+		}
 		
 		
 		

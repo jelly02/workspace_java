@@ -121,6 +121,7 @@ public class MemberService {
 		}else {
 			list.add(new Member(memberId, memberPw, name, mobile,"G",0));
 			System.out.println("[안내] : "+name+"님의 회원 가입이 정상적으로 처리 됐습니다.");
+			System.out.println();
 			return true;
 		}
 		
@@ -287,19 +288,26 @@ public class MemberService {
 						
 						vipSeat[seatChoice-1] = "X";
 						reservation.add(new Reservation(memberId, modifyCode, seat, seatChoice));
-						getReservationList();
+						System.out.println("[안내] 좌석 예약을 완료했습니다. 즐거운 관람 되시길 바랍니다!");
+						System.out.println();
+						//getReservationList();
 						return true;
 						
 				case 2 : 
 					
 						sSeat[seatChoice-1] = "X";
 						reservation.add(new Reservation(memberId, modifyCode, seat, seatChoice));
+						System.out.println("[안내] 좌석 예약을 완료했습니다. 즐거운 관람 되시길 바랍니다!");
+						System.out.println();
 						getReservationList();
 						return true;
 					
 				case 3 :
 						rSeat[seatChoice-1] = "X";
 						reservation.add(new Reservation(memberId, modifyCode, seat, seatChoice));
+						System.out.println("[안내] 좌석 예약을 완료했습니다. 즐거운 관람 되시길 바랍니다!");
+						System.out.println();
+
 						getReservationList();
 						return true;
 			}
@@ -317,13 +325,39 @@ public class MemberService {
 		/**
 		 *  공연 정보 조회
 		 */
-		public ArrayList<Reservation> getReservationList() {
+		public void getReservationList() {
+		
+			if(reservation.isEmpty()) {
+				System.out.println("[오류] 현재 예약된 내역이 없습니다.");
+			}else {
+				for (int i = 0; i < reservation.size(); i++) {
+					
+					System.out.print((i+1)+" . ");
+					if(reservation.get(i).getInfoCode().equals("play_1")) {
+						System.out.print("뮤지컬 더 리퍼 |");
+					}else if(reservation.get(i).getInfoCode().equals("play_2")) {
+						System.out.print("옥탑방 고양이 |");
+					}else if(reservation.get(i).getInfoCode().equals("play_3")) {
+						System.out.print( "피카츄의 대모험 |");
+					}else if(reservation.get(i).getInfoCode().equals("play_4")) {
+						System.out.print("낫아웃 |");
+					}else if(reservation.get(i).getInfoCode().equals("play_5")) {
+						System.out.print("행복 |");
+					}
+					
+					if(reservation.get(i).getSeat().equals("1")) {
+						System.out.print(" 좌석 : VIP석  |");
+					}else if(reservation.get(i).getSeat().equals("2")) {
+						System.out.print(" 좌석 : S석  |");
+					}else {
+						System.out.print(" 좌석 : A석  |");
+					}
+					
+					System.out.print(" 좌석 번호 : "+reservation.get(i).getSeatNum()+"번");
+					System.out.println();
+				}
 			
-			for (int i = 0; i < reservation.size(); i++) {
-			    System.out.print(reservation.get(i) + " ");
 			}
-			
-			return reservation;
 	}
 	
 
