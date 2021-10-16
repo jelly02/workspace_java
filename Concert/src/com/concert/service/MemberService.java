@@ -47,11 +47,11 @@ public class MemberService {
 		list.add(new  Member("user01","user01","김주리","01011111111","A",0));
 		
 		//공연 정보 저장 		
-		play.add(new Info("play_1", "뮤지컬 더 리퍼", "6/12", "19:30 ~ 22:00", "문채원", "송중기"));
-		play.add(new Info("play_2", "옥탑방 고양이", "6/19", "20:00 ~ 22:00", "남정은", "이경민"));
-		play.add(new Info("play_3", "피카츄의 대모험", "6/26", "19:30 ~ 21:30", "소니아", "금랑"));
-		play.add(new Info("play_4", "낫아웃", "7/3", "20:00 ~ 22:30", "송이재", "정재광"));
-		play.add(new Info("play_5", "행복", "7/10", "19:30 ~ 21:30", "김단율", "정영성"));
+		play.add(new Info("play1", "뮤지컬 더 리퍼", "6/12", "19:30 ~ 22:00", "문채원", "송중기"));
+		play.add(new Info("play2", "옥탑방 고양이", "6/19", "20:00 ~ 22:00", "남정은", "이경민"));
+		play.add(new Info("play3", "피카츄의 대모험", "6/26", "19:30 ~ 21:30", "소니아", "금랑"));
+		play.add(new Info("play4", "낫아웃", "7/3", "20:00 ~ 22:30", "송이재", "정재광"));
+		play.add(new Info("play5", "행복", "7/10", "19:30 ~ 21:30", "김단율", "정영성"));
 
 	//	refresh();
 		}
@@ -168,7 +168,7 @@ public class MemberService {
 	
 	public boolean reservation(int playNum) {
 		
-		String editCode = "play_"+playNum;
+		String editCode = "play"+playNum;
 		
 		int index = playExist(editCode);
 		
@@ -268,7 +268,7 @@ public class MemberService {
 	
 	public boolean userSeatChoice(int playCode, int type, int seatChoice, String memberId ) {
 		
-		String modifyCode = "play_"+ playCode;
+		String modifyCode = "play"+ playCode;
 		String seat = "";
 		
 
@@ -333,15 +333,15 @@ public class MemberService {
 				for (int i = 0; i < reservation.size(); i++) {
 					
 					System.out.print((i+1)+" . ");
-					if(reservation.get(i).getInfoCode().equals("play_1")) {
+					if(reservation.get(i).getInfoCode().equals("play1")) {
 						System.out.print("뮤지컬 더 리퍼 |");
-					}else if(reservation.get(i).getInfoCode().equals("play_2")) {
+					}else if(reservation.get(i).getInfoCode().equals("play2")) {
 						System.out.print("옥탑방 고양이 |");
-					}else if(reservation.get(i).getInfoCode().equals("play_3")) {
+					}else if(reservation.get(i).getInfoCode().equals("play3")) {
 						System.out.print( "피카츄의 대모험 |");
-					}else if(reservation.get(i).getInfoCode().equals("play_4")) {
+					}else if(reservation.get(i).getInfoCode().equals("play4")) {
 						System.out.print("낫아웃 |");
-					}else if(reservation.get(i).getInfoCode().equals("play_5")) {
+					}else if(reservation.get(i).getInfoCode().equals("play5")) {
 						System.out.print("행복 |");
 					}
 					

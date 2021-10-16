@@ -8,7 +8,6 @@
     <fullyQualifiedTypeName name="com.work.static_test.SimpleMember"/>
     <fullyQualifiedTypeName name="com.work.static_test.StaticTest"/>
     <fullyQualifiedTypeName name="com.work.model.service.MemberServiceAbstract"/>
-    <fullyQualifiedTypeName name="java.lang.Override"/>
     <fullyQualifiedTypeName name="com.oracle.xmlns.internal.webservices.jaxws_databinding.ExistingAnnotationsType"/>
     <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
@@ -51,4 +50,11 @@
     <fullyQualifiedTypeName name="java.util.Iterator"/>
     <fullyQualifiedTypeName name="com.concert.model.Info"/>
     <fullyQualifiedTypeName name="com.concert.view.Menu"/>
+    <fullyQualifiedTypeName name="week4.Math"/>
+    <fullyQualifiedTypeName name="week4.MyMath"/>
+    <fullyQualifiedTypeName name="week6.SportsCar"/>
+    <fullyQualifiedTypeName name="week6.Child"/>
+    <fullyQualifiedTypeName name="week6.ShapeTest"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="week6.Employee"/>
 </qualifiedTypeNameHistroy>
